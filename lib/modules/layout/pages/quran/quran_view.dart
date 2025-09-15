@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/core/constants/app_assets.dart';
 import 'package:islami_app/core/theme/color_palette.dart';
 import 'package:islami_app/models/sura_data_model.dart';
+import 'package:islami_app/modules/layout/pages/quran/widgets/quran_card_widgett.dart';
+import 'package:islami_app/modules/layout/pages/quran/widgets/recently_card_widget.dart';
 
 class QuranView extends StatefulWidget {
   const QuranView({super.key});
@@ -547,36 +549,8 @@ class _QuranViewState extends State<QuranView> {
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: 280.0,
-                    padding: EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: ColorPalette.primaryColor,
-                      borderRadius: BorderRadius.circular(20.0),
-
-                    ),
-                    child: Row(
-                      children: [
-                        Column(
-                          spacing: 15,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(recentReadSuras[index].suraNameEN,
-                              style: theme.textTheme.headlineSmall,
-                            ),
-                            Text(recentReadSuras[index].suraNameAR,
-                              style: theme.textTheme.headlineSmall,
-                            ),
-                            Text(
-                              "${recentReadSuras[index].suraAyatCount} Verses",
-                              style: theme.textTheme.bodyMedium,
-                            ),
-
-                          ],
-                        ),
-                        Expanded(child: Image.asset(AppAssets.quranCardImg)),
-                      ],
-                    ),
+                  return RecentlyCardWidget(
+                    suraDataModel: recentReadSuras [index],
                   );
                 },
                 separatorBuilder: (context, index) {
@@ -599,51 +573,9 @@ class _QuranViewState extends State<QuranView> {
             ListView.separated(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric (horizontal: 20.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50
-
-                        , decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(AppAssets.suraNumberFrame),),
-                      ),
-                      ),
-                      SizedBox(
-                        width: 24.0,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(allSuras[index].suraNameEN,
-                            style: theme.textTheme.titleLarge?.copyWith(
-                                color: Colors.white
-                            ),
-                          ),
-                          Text(
-                            "${allSuras[index].suraAyatCount} Verses",
-                            style: theme.textTheme.bodyMedium?.copyWith(
-                                color: Colors.white
-                            ),
-                          ),
-
-                        ],
-                      ),
-                      Spacer(),
-                      Text(allSuras[index].suraNameAR,
-                        style: theme.textTheme.titleLarge?.copyWith(
-                            color: Colors.white
-                        ),
-                      ),
-
-                    ],
-
-                  ),
-                );
+                return QuranCardWidgett(suraDataModel: allSuras [index]);
               },
               separatorBuilder: (context, index) {
                 return Divider(
