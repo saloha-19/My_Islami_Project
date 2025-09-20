@@ -3,6 +3,20 @@ import 'package:islami_app/core/theme/color_palette.dart';
 
 abstract class AppThemeManager {
   static ThemeData AppThemeData() => ThemeData(
+    scaffoldBackgroundColor: ColorPalette.scaffoldBackgroundColor,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(
+        color: ColorPalette.primaryColor,
+      ),
+      titleTextStyle: TextStyle(
+        fontFamily: 'Janna',
+        fontWeight: FontWeight.w700,
+        fontSize: 20.0,
+        color: ColorPalette.primaryColor,
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       backgroundColor: ColorPalette.primaryColor,

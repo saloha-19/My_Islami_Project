@@ -5,10 +5,19 @@ abstract class AppAssets {
   static const String tasbihBackground = "assets/images/tasbih_background.png";
   static const String radioBackground = "assets/images/radio_background.png";
   static const String timeBackground = "assets/images/time_background.png";
-  static const String islamiLogo = "assets/images/Islami_logoo.png";
+  static const String islamiLogo = "assets/images/Islami_logo.png";
   static const String quranIcon = "assets/icons/quran_icon.png";
   static const String hadithIcon = "assets/icons/hadith_icon.png";
   static const String tasbehIcon = "assets/icons/tasbeh_icon.png";
   static const String radioIcon = "assets/icons/radio_icon.png";
   static const String timeIcon = "assets/icons/time_icon.png";
+  static const String quranCardImg = "assets/images/quran_card_img.png";
+
+  static const String suraNumberFrame = "assets/icons/sura_number_frame.png";
+  static const String leftCornerImg = "assets/images/left_corner_img.png";
+  static const String rightCornerImg = "assets/images/img_right_corner.png";
+  static const String bottomCornerImg =
+      "assets/images/img_bottom_decoration.png";
+  static const String Sebha = "assets/images/Sebha.png";
+  static const String SebhaTail = "assets/images/SebhaTail.png";
 }
